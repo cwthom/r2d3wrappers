@@ -11,19 +11,23 @@
 #' @param end The end year for the calendar e.g. 2020
 #' @param colors A vector of colors to provide the interpolated color scale
 #' @param showToday Mark out today's date? 
+#' @param width,height Paramters to override the default sizing policy
 #' 
 #' @export
 #' @name Calendar
 #' 
-d3calendar <- function(data, date, value, start, end, colors,
-                       showToday = TRUE) {
+d3_calendar <- function(data, date, value, start, end, colors,
+                        showToday = TRUE,
+                        width = NULL, height = NULL) {
   
   # make use of rlang 0.4.0 and {{}} for NSE
   data <- data %>% dplyr::select(date = {{ date }}, value = {{ value }})
   
-  r2d3::r2d3(data = data, container = "div", width = "100%",
+  r2d3::r2d3(data = data, container = "div", 
+             width = width, height = height,
              options = list(start = start, end = end,
                             colors = c("#FFFFFF", colors),
                             showToday = showToday),
-             script = system.file("calendar.js", package = "r2d3wrappers")) 
+             script = system.file("d3", "calendar", "calendar.js",
+                                  package = "r2d3wrappers")) 
 }
