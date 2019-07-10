@@ -34,7 +34,7 @@ data <- data.frame(date = sample(dates, 10000, replace = TRUE)) %>% count(date)
 # draw calendar
 d3_calendar(data = data, date = date, value = n, 
             start = 2019, end = 2021, showToday = FALSE,
-            colors = RColorBrewer::brewer.pal(10, "BuPu"),
+            colors = RColorBrewer::brewer.pal(9, "BuPu"),
             height = "300px")
 ```
 

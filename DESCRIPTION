@@ -12,8 +12,10 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Depends:
+    R (>= 3.2.0)
 Imports: 
     r2d3,
     dplyr,
-    shiny,
+    rlang (>= 0.4.0),
     magrittr
