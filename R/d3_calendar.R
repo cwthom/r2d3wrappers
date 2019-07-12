@@ -10,14 +10,15 @@
 #' @param start The start year for the calendar e.g. 2018
 #' @param end The end year for the calendar e.g. 2020
 #' @param colors A vector of colors to provide the interpolated color scale
-#' @param showToday Mark out today's date? 
+#' @param showToday Mark out today's date?
+#' @param dateFormat The format string for the dates in \code{data} 
 #' @param width,height Paramters to override the default sizing policy
 #' 
 #' @export
 #' @name Calendar
 #' 
 d3_calendar <- function(data, date, value, start, end, colors,
-                        showToday = TRUE,
+                        showToday = TRUE, dateFormat = "%Y-%m-%d",
                         width = NULL, height = NULL) {
   
   # make use of rlang 0.4.0 and {{}} for NSE
@@ -27,7 +28,8 @@ d3_calendar <- function(data, date, value, start, end, colors,
              width = width, height = height,
              options = list(start = start, end = end,
                             colors = c("#FFFFFF", colors),
-                            showToday = showToday),
+                            showToday = showToday,
+                            dateFormat = dateFormat),
              script = system.file("d3", "calendar", "calendar.js",
                                   package = "r2d3wrappers")) 
 }

@@ -24,16 +24,16 @@ Currently this package contains a wrapper for a calendar visual.
 library(r2d3wrappers)
 library(dplyr)
 
-# create some random data, sampling dates between 01/01/2019 and 31/12/2020
-dates <- as.Date(0:730, origin = "01/01/2019", format = "%d/%m/%Y") %>% 
-  format("%d/%m/%Y") %>% as.character()
+# create some random data, sampling dates between 2019-01-01 and 2020-12-31
+dates <- as.Date(0:730, origin = "2019-01-01", format = "%Y-%m-%d")
 
 # aggregate so one row per date
 data <- data.frame(date = sample(dates, 10000, replace = TRUE)) %>% count(date)
 
 # draw calendar
 d3_calendar(data = data, date = date, value = n, 
-            start = 2019, end = 2021, showToday = FALSE,
+            start = 2019, end = 2021, 
+            showToday = FALSE, dateFormat = "%Y-%m-%d",
             colors = RColorBrewer::brewer.pal(9, "BuPu"),
             height = "300px")
 ```

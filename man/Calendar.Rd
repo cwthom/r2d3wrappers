@@ -6,7 +6,7 @@
 \title{D3 Calendar Visual}
 \usage{
 d3_calendar(data, date, value, start, end, colors, showToday = TRUE,
-  width = NULL, height = NULL)
+  dateFormat = "\%Y-\%m-\%d", width = NULL, height = NULL)
 }
 \arguments{
 \item{data}{A data.frame containing columns to use for date and value}
@@ -22,6 +22,8 @@ d3_calendar(data, date, value, start, end, colors, showToday = TRUE,
 \item{colors}{A vector of colors to provide the interpolated color scale}
 
 \item{showToday}{Mark out today's date?}
+
+\item{dateFormat}{The format string for the dates in \code{data}}
 
 \item{width, height}{Paramters to override the default sizing policy}
 }

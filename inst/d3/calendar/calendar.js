@@ -51,7 +51,7 @@ var grid = calendar.append("g")
     .attr("height", cellHeight)
     .attr("x", function(d) { return d3.timeWeek.count(d3.timeYear(d), d) * cellWidth; })
     .attr("y", function(d) { return d.getDay() * cellHeight; })
-    .datum(d3.timeFormat("%d/%m/%Y"))
+    .datum(d3.timeFormat(options.dateFormat))
     .attr("d", function(d) { return d; })
     .on("click", function() {
       Shiny.setInputValue("date_click", { 
@@ -94,7 +94,7 @@ r2d3.onRender(function(data, svg, width, height, options) {
       
   // add red box round today if desired
   if (options.showToday) {
-    var format = d3.timeFormat("%d/%m/%Y");
+    var format = d3.timeFormat(options.dateFormat);
     grid.filter(function(d) { return d == format(new Date()); })
         .attr("stroke", "#f00")
         .attr("stroke-width", "1"); 
