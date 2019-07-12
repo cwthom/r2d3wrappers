@@ -2,4 +2,6 @@
 
 export("%>%")
 export(d3_calendar)
+export(d3_dendrogram)
+export(d3_radialtree)
 importFrom(magrittr,"%>%")

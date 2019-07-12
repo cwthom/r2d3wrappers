@@ -25,7 +25,7 @@ d3_calendar(data, date, value, start, end, colors, showToday = TRUE,
 
 \item{dateFormat}{The format string for the dates in \code{data}}
 
-\item{width, height}{Paramters to override the default sizing policy}
+\item{width, height}{Parameters to override the default sizing policy}
 }
 \description{
 Function to create a D3 calendar graphic.

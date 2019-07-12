@@ -12,7 +12,7 @@
 #' @param colors A vector of colors to provide the interpolated color scale
 #' @param showToday Mark out today's date?
 #' @param dateFormat The format string for the dates in \code{data} 
-#' @param width,height Paramters to override the default sizing policy
+#' @param width,height Parameters to override the default sizing policy
 #' 
 #' @export
 #' @name Calendar
